@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: center;
+        height: 70px;
+        width: 100%;
+
+        background-color: teal;
+      }
+      .list {
+        color: black;
+        text-decoration: none;
+        margin-left: 30px;
+        color: white;
+        font-size: 14px;
+      }
+      .navlist {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+      }
+
+      /* login/signup */
+      .container {
+        width: 100vw;
+        height: calc(70-100vh);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .myform {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        min-height: 400px;
+        margin-left: 80px;
+        margin-top: 49px;
+        box-shadow: 0px 0px 19px -5px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0px 0px 19px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 19px -5px rgba(0, 0, 0, 0.75);
+        padding: 20px;
+      }
+      h2 {
+        height: 50px;
+        width: 100%;
+        background-color: teal;
+        color: white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .myinput {
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+
+        border: 1px solid gray;
+      }
+      .mybutton {
+        height: 50px;
+        width: 100%;
+        background-color: teal;
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .right {
+        margin-left: 50px;
+        box-shadow: 0px 0px 19px -5px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0px 0px 19px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 19px -5px rgba(0, 0, 0, 0.75);
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+    <script defer src="./jsFile/SecurityManager.js"></script>
+    <script defer src="./jsFile/RoleManagement.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <ul class="navlist">
+        <li><a class="list" href="AdminHome.html">Home</a></li>
+        <li><a class="list" href="UserMng.html">User Management</a></li>
+        <li><a class="list" href="RoleMng.html">Role Management</a></li>
+        <li>
+          <a class="list" href="PermissionMng.html">Permissin Management</a>
+        </li>
+        <li>
+          <a class="list" href="RolePerMng.html">Role-Permission Management</a>
+        </li>
+        <li>
+          <a class="list" href="UserRoleMng.html">User-Role Management</a>
+        </li>
+        <li><a class="list" href="Login.html">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- login/sign up page -->
+
+    <div class="container">
+      <div class="left">
+        <form id="user-form" onsubmit="Save_Role()" class="myform">
+          <h2>Role Management</h2>
+          <label for="">Role Name:</label>
+          <input
+            type="text"
+            id="Role"
+            name="login"
+            required
+            class="myinput"
+            placeholder="Name"
+          />
+          <label for="">Description</label>
+          <input
+            type="text"
+            id="Description"
+            name="password"
+            required
+            class="myinput"
+            placeholder="Desc"
+          />
+          <button class="mybutton" type="submit" id="save-button">Save</button>
+          <button class="mybutton" type="reset" id="clear-button">Clear</button>
+        </form>
+      </div>
+      <div class="right" id="Role-grid"></div>
+    </div>
+  </body>
+</html>
